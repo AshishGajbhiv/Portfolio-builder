@@ -82,7 +82,7 @@ export default function BuilderPage() {
                                     <span className="text-xs uppercase tracking-widest text-zinc-400">Preview Hub</span>
                                 </div>
                                 <button
-                                    onClick={() => window.open(`/preview?theme=${theme}`, '_blank')}
+                                    onClick={() => window.open(`${import.meta.env.BASE_URL}preview?theme=${theme}`, '_blank')}
                                     className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
                                     title="Open preview in new tab"
                                 >
