@@ -149,7 +149,7 @@ function TemplateCard({ id, name, description, onSelect }) {
         >
             <div className="w-full aspect-video rounded-2xl mb-6 border border-zinc-200 dark:border-zinc-700 shadow-inner transition-all overflow-hidden bg-zinc-50 dark:bg-zinc-800">
                 <img
-                    src={`/templates/${id}.png`}
+                    src={`${import.meta.env.BASE_URL}templates/${id}.png`}
                     alt={`${name} template preview`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
