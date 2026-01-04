@@ -1,5 +1,5 @@
 import { usePortfolio } from "../context/PortfolioContext";
-import { Github, Linkedin, ExternalLink, Instagram, Twitter, Globe } from "lucide-react";
+import { Github, Linkedin, Instagram, Twitter, Globe } from "lucide-react";
 import { cn } from "../utils/cn";
 
 export default function LivePreview() {
@@ -115,57 +115,53 @@ export default function LivePreview() {
                                 <div>
                                     <h3 className={cn(
                                         "text-xl font-bold mb-1",
-                                        theme === 'minimal' ? "text-zinc-900 dark:text-white" : 
-                                        theme === 'dark' ? "text-white" : ""
+                                        theme === 'minimal' ? "text-zinc-900 dark:text-white" :
+                                            theme === 'dark' ? "text-white" : ""
                                     )}>{project.title}</h3>
                                     <div className="flex gap-4">
                                         {project.github && (
                                             <a href={project.github} target="_blank" className={cn(
-                                                "text-xs flex items-center gap-1 transition-colors",
-                                                theme === 'minimal' ? "text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400" : 
-                                                theme === 'dark' ? "text-zinc-400 hover:text-blue-400" : 
-                                                "text-zinc-400 hover:text-blue-500"
+                                                "text-xs flex items-center gap-1 transition-colors relative z-20",
+                                                theme === 'minimal' ? "text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400" :
+                                                    theme === 'dark' ? "text-zinc-400 hover:text-blue-400" :
+                                                        "text-zinc-400 hover:text-blue-500"
                                             )}>
                                                 <Github size={12} /> Repo
                                             </a>
                                         )}
                                         {project.liveLink && (
                                             <a href={project.liveLink} target="_blank" className={cn(
-                                                "text-xs flex items-center gap-1 transition-colors",
-                                                theme === 'minimal' ? "text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400" : 
-                                                theme === 'dark' ? "text-zinc-400 hover:text-blue-400" : 
-                                                "text-zinc-400 hover:text-blue-500"
+                                                "text-xs flex items-center gap-1 transition-colors relative z-20",
+                                                theme === 'minimal' ? "text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400" :
+                                                    theme === 'dark' ? "text-zinc-400 hover:text-blue-400" :
+                                                        "text-zinc-400 hover:text-blue-500"
                                             )}>
                                                 <Globe size={12} /> Live
                                             </a>
                                         )}
                                     </div>
                                 </div>
-                                <ExternalLink size={18} className={cn(
-                                    "transition-colors",
-                                    theme === 'dark' ? "text-zinc-400 group-hover:text-blue-400" : "text-zinc-400 group-hover:text-blue-500"
-                                )} />
                             </div>
                             <p className={cn(
                                 "text-sm leading-relaxed mb-4",
-                                theme === 'minimal' ? "text-zinc-700 dark:text-zinc-300" : 
-                                theme === 'dark' ? "text-zinc-300" : 
-                                "opacity-70"
+                                theme === 'minimal' ? "text-zinc-700 dark:text-zinc-300" :
+                                    theme === 'dark' ? "text-zinc-300" :
+                                        "opacity-70"
                             )}>{project.description}</p>
                             <div className="flex flex-wrap gap-2">
                                 {project.tech?.map((t, i) => (
                                     <span key={i} className={cn(
                                         "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded",
-                                        theme === 'minimal' ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400" : 
-                                        theme === 'dark' ? "bg-zinc-700 text-zinc-300" : 
-                                        "text-zinc-400"
+                                        theme === 'minimal' ? "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400" :
+                                            theme === 'dark' ? "bg-zinc-700 text-zinc-300" :
+                                                "text-zinc-400"
                                     )}>{t}</span>
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }
