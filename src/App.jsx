@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { PortfolioProvider } from "./context/PortfolioContext";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import BuilderPage from "./pages/BuilderPage";
 import PreviewPage from "./pages/PreviewPage";
@@ -18,6 +19,7 @@ function AppContent() {
         <Route path="/builder" element={<BuilderPage />} />
         <Route path="/preview" element={<PreviewPage />} />
       </Routes>
+      {!hideNavbar && <Footer />}
     </div>
   );
 }
